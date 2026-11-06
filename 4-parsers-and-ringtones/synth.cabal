@@ -1,0 +1,71 @@
+cabal-version:       2.0
+name:                synth
+version:             0.0.0.0
+synopsis:            See README for more info
+description:         See README for more info
+homepage:            https://github.com/nroumimper/dep-2021-2022-practica
+license:             MIT
+license-file:        LICENSE
+author:              Brian van der Bijl en Nick Roumimper
+maintainer:          nick.roumimper@hu.nl
+copyright:           2020 - Brian van der Bijl, 2021 - Nick Roumimper
+build-type:          Simple
+extra-doc-files:     README.md
+                   , CHANGELOG.md
+tested-with:         GHC == 8.10.4
+
+source-repository head
+  type:                git
+  location:            https://github.com/nroumimper/dep-2021-2022-practica.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Parsers, Types, Instruments
+
+  build-depends:       base >= 4.12.0.0
+                     , process
+                     , bytestring
+                     , transformers
+                     , WAVE
+                     , random
+
+  ghc-options:         -Wall
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings
+
+executable synth
+  hs-source-dirs:      app
+  main-is:             Main.hs
+
+  build-depends:       base >= 4.12.0.0
+                     , synth
+                     , process
+                     , bytestring
+                     , transformers
+                     , WAVE
+                     , random
+
+  ghc-options:         -Wall
+                       -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wcompat
+                       -Widentities
+                       -Wredundant-constraints
+                       -fhide-source-paths
+                       -Wmissing-export-lists
+                       -Wpartial-fields
+
+  default-language:    Haskell2010
+  default-extensions:  OverloadedStrings

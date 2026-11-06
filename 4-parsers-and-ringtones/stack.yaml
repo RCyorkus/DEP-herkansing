@@ -1,0 +1,9 @@
+resolver: lts-19.22
+
+extra-deps: 
+- base-noprelude-4.12.0.0
+- WAVE-0.1.4@sha256:ce0b98c4da47520c42453edd9db22710764e2ef0d291b4ae71153016d56e72f4,1003
+
+
+ghc-options:
+  "$locals": -fhide-source-paths
