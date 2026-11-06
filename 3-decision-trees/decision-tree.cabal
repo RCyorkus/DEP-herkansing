@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 290bdac8fb784889d681640c54b28ce2ecba504e955ae37508896f00c777e59d
+
+name:           decision-tree
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/decision-tree#readme>
+homepage:       https://github.com/githubuser/decision-tree#readme
+bug-reports:    https://github.com/githubuser/decision-tree/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2021 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/decision-tree
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_decision_tree
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , vec
+  default-language: Haskell2010
+
+executable decision-tree-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_decision_tree
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , vec
+    , decision-tree
+  default-language: Haskell2010
